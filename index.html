@@ -3,10 +3,435 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jay Bhatia - Personal Portfolio</title>
+    <title>Jay Bhatia - Personal website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <h1>Jay Bhatia - Personal website</h1>
-  <p>Coming soon!</p>
+
+    <header>
+        <nav>
+            <div class="nav-left">
+                <a href="#home" class="nav-name">Jay Bhatia</a>
+            </div>
+            
+            <div class="nav-right-links">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#activities">Activities</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#awards">Awards</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#hobbies">Hobbies</a></li>
+                </ul>
+            </div>
+            
+            <button id="theme-toggle" class="theme-toggle-btn">
+                <i class="fas fa-moon"></i> 
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="full-screen-section">
+            
+            <img src="assets/images/profilePicFromProm.png" alt="Jay Bhatia" class="profile-pic">
+            
+            <h1>Jay Bhatia</h1>
+            <p class="home-description">
+                High school senior dedicated to the intersection of technology and healthcare, focusing on how computational problem-solving and Machine Learning can solve real-world medical issues.
+            </p>
+            
+            <div class="contact-info-line">
+                <span class="contact-item"><i class="fas fa-map-marker-alt"></i> North Attleborough, MA</span>
+                <span class="contact-item"><i class="fas fa-phone"></i> (508) 699-1968</span>
+                <span class="contact-item"><i class="fas fa-envelope"></i> bhatiajdb@gmail.com</span>
+            </div>
+            
+            <div class="social-links-line">
+                <span class="social-item">
+                    <a href="https://www.linkedin.com/in/jaybhatiaus" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </span>
+                <span class="social-item">
+                    <a href="https://github.com/bhatiajay" target="_blank"><i class="fab fa-github"></i></a>
+                </span>
+                <span class="social-item">
+                    <a href="https://www.instagram.com/jayd.bh" target="_blank"><i class="fab fa-instagram"></i></a>
+                </span>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-card">
+                <p>
+                    As a motivated and hard-working high school student, I am passionate about leveraging technology to solve real-world problems. My primary areas of interest include Computer Science, Machine Learning, Data Analytics, Neuroscience, Economics and Business Development. Through a combination of academic coursework, independent research and hands-on projects, I have developed knowledge in these fields. As a lifelong learner, am always seeking opportunities to expand my knowledge, learn new skills and apply them.
+                </p>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-content">
+                
+                <div class="education-item">
+                    <p>
+                        <span class="bold-text">Foxborough Regional Charter School</span>
+                    </p>
+                    <p class="experience-date">2022 - Present</p>
+                    
+                    <p>
+                        <span class="bold-text">SAT: </span><span class="highlight-score">1540 / 1600</span> 
+                        <span class="score-detail" style="color: inherit; font-style: normal;">
+                            (Math: <span class="highlight-score" style="font-weight: normal;">800/800</span>, English: <span class="highlight-score" style="font-weight: normal;">740/800</span>)
+                        </span>
+                    </p>
+                    <p>
+                        <span class="bold-text">GPA: </span><span class="highlight-score">4.91</span> <span class="score-detail">(weighted on 4.3 scale)</span>
+                    </p>
+                    
+                    <p class="bold-text" style="margin-bottom: 0;">AP / Dual Enrollment Courses</p>
+                    
+                    <div class="courses-grid" style="margin-top: -10px;">
+                        
+                        <div>
+                            <p class="bold-text">Completed:</p>
+                            <p class="experience-date">2022 - 2025</p>
+                            <ul id="completed-courses">
+                                <li>AP Calculus BC <span class="highlight-score" style="font-style: italic; font-weight: normal;">(Scored 5)</span></li>
+                                <li>AP Computer Science: A <span class="highlight-score" style="font-style: italic; font-weight: normal;">(Scored 5)</span></li>
+                                <li>AP Physics C: Mechanics <span class="highlight-score" style="font-style: italic; font-weight: normal;">(Scored 5)</span></li>
+                                <li>AP Psychology <span class="highlight-score" style="font-style: italic; font-weight: normal;">(Scored 3)</span></li>
+                                <li>AP Microeconomics <span class="highlight-score" style="font-style: italic; font-weight: normal;">(Scored 5)</span></li>
+                                <li>AP Macroeconomics <span class="highlight-score" style="font-style: italic; font-weight: normal;">(Scored 5)</span></li>
+                                <li>AP Statistics <span class="highlight-score" style="font-style: italic; font-weight: normal;">(Scored 4)</span></li>
+                                <li>AP Government & Politics <span class="highlight-score" style="font-style: italic; font-weight: normal;">(Scored 5)</span></li>
+                                <li>AP Spanish Language & Culture <span class="highlight-score" style="font-style: italic; font-weight: normal;">(Scored 4)</span></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <p class="bold-text">Currently Enrolled:</p>
+                            <p class="experience-date">2025 - Present</p>
+                            <ul id="enrolled-courses">
+                                <li>Dual Enrollment Differential Equations</li>
+                                <li>AP Physics C: Electricity & Magnetism</li>
+                                <li>AP Chemistry</li>
+                                <li>AP Biology</li>
+                                <li>AP English Language</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <p>
+                        <span class="bold-text">Harvard Summer School</span>
+                    </p>
+                    <p class="experience-date">Summer 2024</p>
+                    
+                    <h4>Completed Pre-College Courses</h4>
+                    <ul id="pre-college-courses">
+                        <li>Mathematical Elements of Artificial Intelligence</li>
+                    </ul>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="experience-grid">
+                
+                <div class="experience-card">
+                    <h3>Rehabilitation Aide at PhysioHealth Physical Therapy</h3>
+                    <p class="experience-date">July 2025 - Present</p> 
+                    <p class="experience-date experience-metadata">10 hrs/week, 24 weeks (Grade 11 summer, Grade 12)</p> 
+                    <ul>
+                        <li>Delivering care to patients recovering from injuries, illnesses, and surgeries by administering exercises.</li>
+                        <li>Preparing patients/equipment and monitoring patient progress/responses to therapy.</li>
+                        <li>Assisted physical therapists with post-surgical and injury recovery patient care.</li>
+                        <li>Guided therapeutic exercises, prepared equipment, and documented patient progress for 20+ patients weekly.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <h3>Transport Volunteer at The Miriam Hospital (Brown University Health)</h3>
+                    <p class="experience-date">September 2023 - Present</p>
+                    <p class="experience-date experience-metadata">5 hrs/week, 52 weeks (Grades 11-12, 210+ hrs)</p>
+                    <ul>
+                        <li>Transported patients, specimens, and medical equipment across hospital departments and to external facilities.</li>
+                        <li>Ensured timely delivery of critical materials while maintaining patient comfort and HIPAA compliance standards.</li>
+                        <li>Volunteered in the transport department, completing over 200 hours of service.</li>
+                        <li>Assisted with patient transport and various hospital duties.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <h3>Operations Intern at Supy, Dubai, UAE</h3>
+                    <p class="experience-date">July 2023</p>
+                    <p class="experience-date experience-metadata">40 hrs/week, 4 weeks (Grade 9 summer)</p>
+                    <ul>
+                        <li>Performed data analysis using Tableau to identify trends, inefficiencies, and opportunities for improvement.</li>
+                        <li>Identified performance issues in proprietary software and created onboarding/training material.</li>
+                        <li>Received company recognition for extracting meaningful insights and translating them into actionable recommendations for Operations, Sales, and Technology teams.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <h3>Lecture Summarizer</h3>
+                    <p class="experience-date experience-metadata">6 hrs/week, 15 weeks (Grades 9)</p>
+                    <p>Application with command line interface to record speech and then summarize it. The idea is to record lectures and summarize them for later offline use. Makes use of python library SPaCy, and Google Speech Recognizer.</p>
+                    <p class="project-link"><a href="https://github.com/bhatiajay/lecture-summarizer" target="_blank" class="bold-text"><i class="fab fa-github"></i> Project Repository</a></p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Feather AI</h3>
+                    <p class="experience-date experience-metadata">6 hrs/week, 15 weeks (Grades 10)</p>
+                    <p>Web application that allows user to record speech on demand and then summarize it. The purpose is to record lectures or any lengthy discourse and then summarize. It uses HTML, CSS, Javascript for web interface and recording on demand and it uses OpenAI API for summarization. It can be extended to perform other functions like translation. Placed 3rd in Bristol Regional Science Fair.</p>
+                    <p class="project-link"><a href="https://github.com/bhatiajay/feather-ai" target="_blank" class="bold-text"><i class="fab fa-github"></i> Project Repository</a></p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Predict Sjögren's Syndrome</h3>
+                    <p class="experience-date experience-metadata">6 hrs/week, 15 weeks (Grades 11)</p>
+                    <p>Developed a machine learning model using Keras and Scikit-Learn to predict the risk percentage for Sjögren's Syndrome. Won the Yale Science and Engineering Award & placed 3rd in the Bristol regional science fair.</p>
+                    <p class="project-link"><a href="https://github.com/bhatiajay/predict-sjogrens" target="_blank" class="bold-text"><i class="fab fa-github"></i> Project Repository</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="activities">
+            <h2>Activities</h2>
+            <div class="activities-grid">
+                
+                <div class="activity-card">
+                    <h3>Founder & President, FRCS DECA Chapter</h3>
+                    <p class="experience-date experience-metadata">6 hrs/week, 36 weeks (Grades 11,12)</p>
+                    <p>Founded/Grew Chapter to 30+ members; Organized weekly competition sessions covering case studies, Role-plays; Attended state conferences to develop leadership abilities and network with peers.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <h3>Captain, Varsity Wrestling; Athlete, Varsity Soccer & Volleyball</h3>
+                    <p class="experience-date experience-metadata">10 hrs/week, 36 weeks (Grades 10, 11, 12)</p>
+                    <p>Wrestling Captain: Led 12-member team through technical training and mental preparation; coached teammates on strategy and competed in 15+ interscholastic meets. Starting Defensive Specialist in Volleyball and Starting Centerback in Soccer.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <h3>Founder & President, FRCS Math Team</h3>
+                    <p class="experience-date experience-metadata">6 hrs/week, 36 weeks (Grades 10,11,12)</p>
+                    <p>Founded the team and recruited 15 members; led weekly problem-solving sessions preparing students for regional/state competition. Led events/fundraisers for charity; Establishing elementary school tutoring programs serving students in math enrichment.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <h3>Captain, FRCS Robotics Team (FTC)</h3>
+                    <p class="experience-date experience-metadata">6 hrs/week, 20 weeks (Grades 10, 11, 12)</p>
+                    <p>Led 12-member team in robot design and programming; organized inter-team scrimmages with local FTC programs; Competed in FTC Robotics League; Founded FLL program for elementary students. Secured $2,000 in grants through sponsor outreach and proposal writing.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <h3>Expert Witness, FRCS Mock Trial Team</h3>
+                    <p class="experience-date experience-metadata">6 hrs/week, 12 weeks (Grades 10, 11, 12)</p>
+                    <p>Mastered expert testimony on forensics. Prepared detailed witness statements and withstood rigorous cross-examination. Led team to first-ever state competition appearance after winning regional championship.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <h3>Representative, FRCS Student Council</h3>
+                    <p class="experience-date experience-metadata">2 hrs/week, 36 weeks (Grades 9, 10, 11, 12)</p>
+                    <p>Organized 6+ annual school events including dances and fundraisers raising $-----. Coordinated community service initiatives and collaborated with administration on student-driven programs and policy improvements.</p>
+                </div>
+
+                <div class="activity-card">
+                    <h3>Member, National Science Honors Society</h3>
+                    <p class="experience-date experience-metadata">2 hrs/week, 36 weeks (Grades 10, 11, 12)</p>
+                    <p>Educated students in STEM-related areas at FRCS elementary and middle schools, providing tutoring and mentoring to foster early interest and competency in science and technology.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <h3>Member, National Green Schools Society</h3>
+                    <p class="experience-date experience-metadata">2 hrs/week, 36 weeks (Grades 11, 12)</p>
+                    <p>Organized clothing drives, recycling projects, and other sustainability initiatives across the FRCS community.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                
+                <div class="skills-card">
+                    <h3 class="bold-text">Programming & Web</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>Javascript</li>
+                        <li>HTML/CSS</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-card">
+                    <h3 class="bold-text">Data Science & ML</h3>
+                    <ul>
+                        <li>Machine Learning</li>
+                        <li>Keras</li>
+                        <li>Scikit</li>
+                        <li>Data Analysis</li>
+                        <li>Tableau</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-card">
+                    <h3 class="bold-text">Business & Tools</h3>
+                    <ul>
+                        <li>Shopify</li>
+                        <li>Asana</li>
+                        <li>Inventory Management</li>
+                        <li>Zendesk</li>
+                        <li>Microsoft Office Suite (Word, Excel, PowerPoint)</li>
+                        <li>Google Document Suite</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="awards">
+            <h2>Awards</h2>
+            <div class="awards-grid">
+                
+                <div class="award-card">
+                    <i class="fas fa-certificate award-icon"></i>
+                    <h3>High Honors at Foxborough Regional Charter School</h3>
+                    <p>Achieved High Honors for outstanding academic performance in Grade 9, Grade 10, and Grade 11.</p>
+                </div>
+
+                <div class="award-card">
+                    <i class="fas fa-graduation-cap award-icon"></i>
+                    <h3>AP Scholar with Distinction</h3>
+                    <p>Awarded for receiving scores of 3 or higher on five or more AP Exams, demonstrating college-level achievement.</p>
+                </div>
+                
+                <div class="award-card">
+                    <i class="fas fa-star award-icon"></i>
+                    <h3>National Merit Commendation</h3>
+                    <p>Recognized for outstanding academic promise based on high performance on the Preliminary SAT/National Merit Scholarship Qualifying Test (PSAT/NMSQT).</p>
+                </div>
+                
+                <div class="award-card">
+                    <i class="fas fa-medal award-icon"></i>
+                    <h3>National Spanish Exam Silver Medal (AATSP)</h3>
+                    <p>Awarded for outstanding achievement on the National Spanish Examinations, placing in the 85th to 94th percentile.</p>
+                </div>
+                
+                <div class="award-card">
+                    <i class="fas fa-trophy award-icon"></i>
+                    <h3>Yale Science and Engineering Award</h3>
+                    <p>Recognized for outstanding achievement and innovation in scientific research and engineering.</p>
+                </div>
+                
+                <div class="award-card">
+                    <i class="fas fa-award award-icon"></i>
+                    <h3>3rd Place, Bristol Regional Science Fair</h3>
+                    <p>Awarded for project excellence and significant scientific contribution in both 2023-2024 and 2024-2025.</p>
+                </div>
+
+                <div class="award-card">
+                    <i class="fas fa-gavel award-icon"></i>
+                    <h3>Winner, Mock Court Regional Competition</h3>
+                    <p>Awarded for outstanding performance and legal argumentation in the regional mock court competition.</p>
+                </div>
+
+                <div class="award-card">
+                    <i class="fas fa-brain award-icon"></i>
+                    <h3>High Honors - JHU CTY</h3>
+                    <p>Awarded for exceptional performance in advanced academic studies through the Johns Hopkins Center for Talented Youth program.</p>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="slider-container gallery-container">
+                <div class="slider-track">
+                    
+                    <div class="slide">
+                        <img src="assets/images/predictSjogrens.png" alt="Sjogrens ML Model Poster at MSEF">
+                        <div class="slide-description">
+                            <p class="bold-text">Presenting Predict Sjögren's Syndrome [ML Model] at State Fair</p>
+                            <p>Presenting the machine learning model designed to predict the risk percentage for Sjögren's Syndrome at the Massachusetts Science and Engineering Fair (MSEF) in 2025. My little sister Divisha visited the stand after the fair! 😊</p>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <img src="assets/images/yaleStemAward.png" alt="Yale Science and Engineering Award Certificate">
+                        <div class="slide-description">
+                            <p class="bold-text">Receiving the Yale Science and Engineering Association Award</p>
+                            <p>Awarded for innovation and excellence in the field of science and engineering for my machine learning research project.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <img src="assets/images/sciFairLectureSum.png" alt="Lecture Summarizer App Presentation">
+                        <div class="slide-description">
+                            <p class="bold-text">Science Fair Presentation for Lecture Summarizer App</p>
+                            <p>Showcasing the Python-based application that records and uses NLP (SPaCy, Google Speech API) to transcribe and summarize class lectures, which earned a 3rd place regional science fair award.</p>
+                        </div>
+                    </div>
+
+                    <div class="slide">
+                        <img src="assets/images/orchestraGrandel.png" alt="Performing with FRCS Music Director, Mr. Grandel">
+                        <div class="slide-description">
+                            <p class="bold-text">FRCS Orchestra Performance with Mr. Grandel</p>
+                            <p>Playing piano and percussion instruments as part of the annual school orchestra. Mr. Grandel, the music director, composes and conducts all orchestra events, guiding students through advanced pieces.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <img src="assets/images/fundRaiserForChurchAtFRCS.png" alt="Volunteering at a church fundraiser event.">
+                        <div class="slide-description">
+                            <p class="bold-text">Fundraiser for Christ the King Parish Summer Camps</p>
+                            <p>Volunteering with school friends at a fund raising event to benefit summer camps for children - Christ the King Parish, Brockton MA.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="prev-btn">&lt;</button>
+                <button class="next-btn">&gt;</button>
+            </div>
+        </section>
+        
+        <section id="hobbies">
+            <h2>Hobbies</h2>
+            <div class="hobbies-grid">
+                <div class="hobby-card">Chess</div>
+                <div class="hobby-card">Reading</div>
+                <div class="hobby-card">Fitness</div>
+                <div class="hobby-card">Wrestling</div>
+                <div class="hobby-card">Soccer</div>
+                <div class="hobby-card">Volleyball</div>
+                <div class="hobby-card">Music (Piano & Guitar)</div>
+            </div>
+            <div class="video-container">
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Jay Bhatia. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>

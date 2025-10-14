@@ -1,0 +1,568 @@
+/* Custom Properties (Colors and Fonts) */
+:root {
+    /* Light Theme Colors (Default) */
+    --primary: #FFFFFF;        /* White background */
+    --secondary: #F8FAFC;      /* Off-white background for cards/sections */
+    --text-primary: #1E293B;   /* Dark Slate/Blue for main text */
+    --text-secondary: #475569; /* Medium Gray for secondary text */
+    --accent-1: #64748B;       /* Medium Cool Gray (Subdued Metadata Color) */
+    --accent-2: #94A3B8;       /* Lighter Cool Gray (Experience Card Background) */
+    --highlight: #4682B4;      /* Steel Blue for scores/GPA/accents */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --hover-bg: #EAEFF4;       /* Very light gray/blue tint for hover in light mode */
+    --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Theme Colors */
+body.dark-theme {
+    --primary: #1E293B;        /* Dark Slate Blue background */
+    --secondary: #334155;      /* Darker Slate Blue for cards/sections */
+    --text-primary: #F8FAFC;   /* Off-white for main text */
+    --text-secondary: #CBD5E1; /* Light Gray for secondary text */
+    --accent-1: #64748B;       /* Medium Cool Gray (Highlight/Subdued Metadata Color) */
+    --accent-2: #475569;       /* Medium Slate (used for backgrounds/li in dark theme) */
+    --highlight: #64748B;      /* Reverts to cool gray for dark theme scores/accents */
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    --hover-bg: #3F5169;       /* Slightly lighter slate for hover in dark mode */
+    --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+/*Base Styles and Fix for Scroll-Spy/Fixed Header */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--primary);
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* style for Links */
+a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--highlight);
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    color: var(--text-primary);
+    margin-top: 0;
+}
+
+/* Section Title */
+h2 {
+    font-size: 2.2em;
+    text-align: center; 
+    padding-bottom: 0;
+    border-bottom: none; 
+    margin-bottom: 30px;
+}
+
+/* Bolding Utility */
+.bold-text {
+    font-weight: bold;
+}
+
+
+/* Layout and Navigation - Fixed Header and Navigation Bar */
+header {
+    background-color: var(--secondary);
+    box-shadow: var(--shadow);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+nav {
+    display: flex;
+    /* Use flex-start and auto margin to position items */
+    justify-content: flex-start; 
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--text-primary) !important;
+}
+
+/* right justification for navigtion links*/
+.nav-right-links {
+    margin-left: auto;
+    margin-right: 20px; /* Space before the theme toggle button */
+}
+
+.nav-right-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-right-links ul li {
+    margin-left: 20px;
+}
+
+.nav-right-links a {
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+}
+
+/* Active Link Highlight - When scrolling over the corresponding section */
+.nav-right-links a.active {
+    color: var(--highlight);
+    border-bottom: 2px solid var(--highlight);
+}
+
+
+/* Theme Toggle Button Fix */
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--text-primary); /* Ensures button is visible in light mode */
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--highlight);
+}
+body.dark-theme .theme-toggle-btn {
+    color: var(--text-primary); /* light icon color in dark mode */
+}
+
+
+main {
+    padding-top: 80px; /* Offset for fixed header */
+}
+
+/* Sections width 1200px */
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px; 
+}
+
+/* Home Section */
+.full-screen-section {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 0; 
+    padding-bottom: 0;
+}
+
+.home-description {
+    max-width: 800px;
+    font-size: 1.15em; /* Increase size */
+    font-weight: normal; 
+    line-height: 1.4;
+    color: var(--text-primary);
+    margin: 20px auto 30px auto; 
+}
+
+.profile-pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 25px;
+    border: 5px solid var(--highlight);
+    box-shadow: var(--shadow);
+}
+
+.contact-info-line, .social-links-line {
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact-item, .social-item {
+    margin: 0 15px;
+    color: var(--text-secondary);
+}
+
+.social-item a {
+    font-size: 1.5em;
+    color: var(--text-secondary);
+}
+
+.social-item a:hover {
+    color: var(--highlight);
+}
+
+/* About Section */
+.about-card {
+    background-color: var(--secondary);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* ADD TRANSITION */
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.about-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: var(--hover-shadow);
+    background-color: var(--hover-bg);
+}
+
+
+/* Education Section */
+.education-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.education-item {
+    background-color: var(--secondary);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* ADD TRANSITION */
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+    background-color: var(--hover-bg);
+}
+
+/* Score Styling */
+.education-item .highlight-score {
+    color: #4682B4; 
+    font-weight: bold; 
+    transition: color 0.3s;
+}
+body.dark-theme .education-item .highlight-score {
+    color: var(--accent-1); 
+}
+
+.education-item ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.courses-grid h4 {
+    margin-top: 0;
+}
+
+
+/* Experience and Activities Sections */
+.experience-grid, .activities-grid, .projects-grid, .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.experience-card, .activity-card, .project-card, .award-card, .skills-card { /* ADD .skills-card */
+    background-color: var(--secondary);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* ADD TRANSITION */
+    
+    display: flex;
+    flex-direction: column;
+}
+
+/* pushing repo link to bottom of the card */
+.project-card .project-link {
+    margin-top: auto; 
+    padding-top: 10px; 
+}
+
+
+/* hover */
+.experience-card:hover, .activity-card:hover, .project-card:hover, .award-card:hover, .skills-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: var(--hover-shadow);
+    background-color: var(--hover-bg);
+}
+
+.experience-card h3, .activity-card h3, .project-card h3 {
+    color: var(--highlight);
+    margin-bottom: 5px;
+    font-size: 1.15em;
+}
+
+/* Target h3 within experience, activity, and project cards specifically */
+body.dark-theme .experience-card h3,
+body.dark-theme .activity-card h3,
+body.dark-theme .project-card h3 {
+    color: var(--text-primary); /* Change title color to vibrant off-white in dark mode */
+}
+
+/* Unified styling for ALL date and metadata lines in Experience/Activities */
+.experience-date {
+    color: var(--accent-1); /* Subdued color (Medium Cool Gray) */
+    font-style: italic;
+    font-weight: normal;
+    font-size: 0.9em;
+    margin-top: 0;
+    margin-bottom: 5px; 
+    line-height: 1.2;
+}
+
+.experience-card .experience-date:first-of-type {
+    margin-top: -5px; /* Pulls the date range closer to the H3 */
+}
+
+.experience-metadata {
+    /* Ensures the default 5px margin-bottom from .experience-date is respected, 
+       and no negative margin is applied on top to maintain line separation. */
+    margin-top: 0; 
+    margin-bottom: 10px; /* space before the bulleted list/description */
+}
+
+
+.experience-card ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 10px 0 0 0;
+}
+
+/* Skills Section- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.skills-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.skills-card li {
+    background-color: var(--accent-2);
+    color: var(--text-primary);
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px 5px 5px 0;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+body.dark-theme .skills-card li {
+    background-color: var(--accent-1); 
+    color: var(--text-primary);
+}
+
+
+/* Awards Section */
+.award-card {
+    text-align: center;
+}
+
+.award-icon {
+    font-size: 2em;
+    color: var(--highlight);
+    margin-bottom: 10px;
+}
+
+.award-card h3 {
+    font-size: 1.2em;
+}
+
+
+/* Gallery Section */
+.gallery-container {
+    background-color: var(--secondary);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s;
+    overflow: hidden; 
+    position: relative;
+    max-width: 1300px; /* increasing max-width to hold the 1280px image + padding */
+    margin: 0 auto;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.slide img {
+    /* Set image to always fit the container width (1280px max) */
+    width: 100%;
+    /* 16:9 ratio ensures height consistency. Since all images are now 16:9, 
+       setting auto height works best for responsiveness. */
+    height: auto; 
+    display: block;
+    object-fit: cover;
+    border-radius: 5px; 
+    margin-bottom: 15px; /* Space between image and description */
+}
+
+/* style for the description block */
+.slide-description {
+    background-color: var(--primary); /* Use main background for contrast with card */
+    color: var(--text-primary);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+    font-size: 1em;
+}
+body.dark-theme .slide-description {
+    background-color: var(--accent-2); 
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.slide-description p {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+.slide-description p:first-child {
+    margin-top: 0;
+}
+
+/* Navigation buttons */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.5em;
+    line-height: 1;
+}
+
+.prev-btn {
+    left: 10px;
+    border-radius: 0 5px 5px 0;
+}
+
+.next-btn {
+    right: 10px;
+    border-radius: 5px 0 0 5px;
+}
+
+
+/* Hobbies Section */
+.hobbies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.hobby-card {
+    background-color: var(--secondary);
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    font-weight: bold;
+    color: var(--text-primary);
+    font-size: 1em;
+    cursor: default;
+}
+
+.hobby-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+    background-color: var(--hover-bg);
+}
+body.dark-theme .hobby-card {
+    background-color: var(--accent-2);
+}
+
+
+.video-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.video-container iframe {
+    max-width: 100%;
+    border: none;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--secondary);
+    color: var(--text-secondary);
+    border-top: 1px solid var(--accent-1);
+    transition: background-color 0.3s;
+}
+
+
+/* media queries responsiveness */
+@media (max-width: 768px) {
+    
+    /* Navigation Adjustments */
+    .nav-right-links {
+        display: none; /* Hides full menu on small screens */
+    }
+    
+    nav {
+        /* When links are hidden, center the name and toggle button */
+        justify-content: space-around; 
+    }
+
+    /* Home Section */
+    .profile-pic {
+        width: 180px;
+        height: 180px;
+    }
+
+    /* stacking courses vertically in education */
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+}

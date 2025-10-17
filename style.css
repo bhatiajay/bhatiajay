@@ -21,7 +21,7 @@ body.dark-theme {
     --text-secondary: #CBD5E1; /* Light Gray for secondary text */
     --accent-1: #64748B;       /* Medium Cool Gray (Highlight/Subdued Metadata Color) */
     --accent-2: #475569;       /* Medium Slate (used for backgrounds/li in dark theme) */
-    --highlight: #64748B;      /* Reverts to cool gray for dark theme scores/accents */
+    --highlight: #4682B4;      /* light theme's Steel Blue for scores in dark theme */
     --shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     --hover-bg: #3F5169;       /* Slightly lighter slate for hover in dark mode */
     --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
@@ -180,11 +180,11 @@ section {
 
 .home-description {
     max-width: 800px;
-    font-size: 1.15em; /* Increase size */
-    font-weight: normal; 
+    font-size: 1.15em;
+    font-weight: normal;
     line-height: 1.4;
-    color: var(--text-primary);
-    margin: 20px auto 30px auto; 
+    color: var(--text-primary); 
+    margin: 20px auto 30px auto;
 }
 
 .profile-pic {
@@ -263,10 +263,6 @@ section {
     font-weight: bold; 
     transition: color 0.3s;
 }
-body.dark-theme .education-item .highlight-score {
-    color: var(--accent-1); 
-}
-
 .education-item ul {
     list-style: disc;
     padding-left: 20px;
@@ -358,7 +354,7 @@ body.dark-theme .project-card h3 {
     margin: 10px 0 0 0;
 }
 
-/* Skills Section- */
+/* Skills Section */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

@@ -1,11 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- Theme Toggling Logic ---
+    // Theme Toggling Logic
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
 
     // Check for saved theme preference or default to DARK.
-    // NOTE: For file:// URLs, this may not read/write, but it works when hosted.
     const savedTheme = localStorage.getItem('theme') || 'dark';
 
     // The dark-theme class is already added to the <body> in index.html.
@@ -14,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Ensure icon is correct for dark mode (the sun icon)
         themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
     } else {
-        // If 'light' preference is saved (only works on a server), override the HTML default.
+        // If 'light' preference is saved, override the HTML default.
         body.classList.remove('dark-theme');
         // Ensure icon is correct for light mode (the moon icon)
         themeToggle.querySelector('i').classList.replace('fa-sun', 'fa-moon');
@@ -23,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggle.addEventListener('click', () => {
         body.classList.toggle('dark-theme');
 
-        // Update local storage (will only work when hosted)
+        // Update local storage
         const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
         localStorage.setItem('theme', currentTheme);
 
@@ -37,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // --- Scroll-Spy Active Link Highlighting ---
+    // Scroll-Spy Active Link Highlighting 
     const sections = document.querySelectorAll("main section");
     const navLinks = document.querySelectorAll(".nav-right-links a");
 
@@ -67,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     highlightLink(); // Initial call to set active link on load
 
 
-    // --- Gallery Slider Logic (Optional) ---
+    // Gallery Slider Logic (Optional)
     const sliderTrack = document.querySelector('.slider-track');
     const slides = document.querySelectorAll('.slide');
     const prevBtn = document.querySelector('.prev-btn');

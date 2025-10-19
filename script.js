@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // We only need to remove it IF the user explicitly saved a 'light' preference.
     if (savedTheme === 'dark') {
         // Ensure icon is correct for dark mode (the sun icon)
+        body.classList.add('dark-theme'); // Ensure class is present
         themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
     } else {
         // If 'light' preference is saved, override the HTML default.
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // Scroll-Spy Active Link Highlighting 
+    // Scroll-Spy Active Link Highlighting
     const sections = document.querySelectorAll("main section");
     const navLinks = document.querySelectorAll(".nav-right-links a");
 
@@ -66,26 +67,30 @@ document.addEventListener('DOMContentLoaded', () => {
     highlightLink(); // Initial call to set active link on load
 
 
-    // Gallery Slider Logic (Optional)
+    // Gallery Slider Logic 
     const sliderTrack = document.querySelector('.slider-track');
-    const slides = document.querySelectorAll('.slide');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
     let currentIndex = 0;
 
     if (sliderTrack) {
         const updateSlider = () => {
-            const slideWidth = slides[0].clientWidth;
-            sliderTrack.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+            const currentSlides = document.querySelectorAll('.slide'); // Re-evaluate slide list
+            if (currentSlides.length > 0) {
+                const slideWidth = currentSlides[0].clientWidth;
+                sliderTrack.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+            }
         };
 
         const goToPrev = () => {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+            const currentSlides = document.querySelectorAll('.slide');
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : currentSlides.length - 1;
             updateSlider();
         };
 
         const goToNext = () => {
-            currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+            const currentSlides = document.querySelectorAll('.slide');
+            currentIndex = (currentIndex < currentSlides.length - 1) ? currentIndex + 1 : 0;
             updateSlider();
         };
 
@@ -94,5 +99,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Recalculate slider position on window resize
         window.addEventListener('resize', updateSlider);
+    }
+    
+    // Video toggle logic
+    const wrestlingCard = document.getElementById('wrestling-card');
+    const videoContainer = document.getElementById('video-player-container');
+    const videoElement = document.getElementById('wrestling-video');
+
+    if (wrestlingCard && videoContainer && videoElement) {
+        wrestlingCard.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            
+            // 1. Toggle visibility of the video container
+            const isActive = videoContainer.classList.toggle('active');
+
+            // 2. Control video playback and scrolling
+            if (isActive) {
+                // Video is visible:
+                // We use setTimeout to ensure the element is visible before trying to play.
+                setTimeout(() => {
+                    // Start playback (if user interaction policy allows)
+                    videoElement.play().catch(error => {
+                        console.log("Video playback interrupted (likely user interaction required):", error);
+                    });
+                }, 500); // 500ms matches the CSS transition time
+
+                // Scroll to the video container
+                videoContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                // Video is hidden: pause and reset it
+                videoElement.pause();
+                videoElement.currentTime = 0;
+            }
+        });
     }
 });

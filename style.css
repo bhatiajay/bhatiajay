@@ -513,17 +513,40 @@ body.dark-theme .hobby-card {
     background-color: var(--accent-2);
 }
 
+/* Style for the video icon in the hobby card */
+.video-icon {
+    font-size: 0.8em;
+    color: var(--highlight);
+    margin-left: 5px;
+    vertical-align: middle;
+}
 
 .video-container {
     text-align: center;
     margin-top: 30px;
+
+    /* Hide by default, with a smooth transition */
+    max-height: 0; 
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out, visibility 0.5s;
 }
 
-.video-container iframe {
+/* Style to reveal the video container */
+.video-container.active {
+    max-height: 900px; /* INCREASED HEIGHT to ensure video + caption are visible */
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Ensure the video element itself takes full width of its container */
+#wrestling-video {
+    width: 100%;
     max-width: 100%;
-    border: none;
     border-radius: 8px;
     box-shadow: var(--shadow);
+    display: block; 
 }
 
 

@@ -184,7 +184,7 @@ section {
     font-weight: normal;
     line-height: 1.4;
     color: var(--text-primary); 
-    margin: 20px auto 30px auto;
+    margin: 10px auto 30px auto;
 }
 
 .profile-pic {
@@ -192,13 +192,13 @@ section {
     height: 250px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     border: 5px solid var(--highlight);
     box-shadow: var(--shadow);
 }
 
 .contact-info-line, .social-links-line {
-    margin: 15px 0;
+    margin: 7px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -216,6 +216,69 @@ section {
 
 .social-item a:hover {
     color: var(--highlight);
+}
+
+
+/* Style for the new CTA button line */
+.cta-links-line {
+    margin-top: 10px; /* Space from social links */
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center;
+    gap: 15px; /* Spacing between buttons */
+}
+
+/* Primary Call to action Button Style --- */
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--highlight); /* Use the highlight color for prominence */
+    color: var(--primary) !important; /* Text color contrast, forcing white/off-white */
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Stronger shadow for CTA */
+}
+
+.primary-button:hover {
+    background-color: #357BA8; /* Slightly darker shade of Steel Blue for hover */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    color: var(--primary) !important;
+}
+
+.primary-button i {
+    margin-right: 8px;
+}
+
+/* Secondary Call to action Button Style --- */
+.secondary-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: transparent; 
+    border: 2px solid var(--highlight); /* Border in highlight color */
+    color: var(--text-primary) !important; 
+    padding: 10px 20px; 
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.0em;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.secondary-button:hover {
+    background-color: var(--highlight); /* Fill with highlight color on hover */
+    color: var(--primary) !important; /* Change text to primary color */
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.secondary-button i {
+    margin-right: 8px;
 }
 
 /* About Section */
@@ -421,65 +484,54 @@ body.dark-theme .skills-card li {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--secondary);
+    transition: background-color 0.3s;
 }
 
 .slide img {
-    /* Set image to always fit the container width (1280px max) */
-    width: 100%;
-    /* 16:9 ratio ensures height consistency. Since all images are now 16:9, 
-       setting auto height works best for responsiveness. */
-    height: auto; 
-    display: block;
-    object-fit: cover;
-    border-radius: 5px; 
-    margin-bottom: 15px; /* Space between image and description */
+    max-width: 90%;
+    height: 85%;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 15px;
 }
 
-/* style for the description block */
 .slide-description {
-    background-color: var(--primary); /* Use main background for contrast with card */
-    color: var(--text-primary);
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
-    font-size: 1em;
-}
-body.dark-theme .slide-description {
-    background-color: var(--accent-2); 
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+    max-width: 700px;
 }
 
 .slide-description p {
+    color: var(--text-secondary);
     margin: 5px 0;
-    line-height: 1.4;
-}
-.slide-description p:first-child {
-    margin-top: 0;
 }
 
-/* Navigation buttons */
 .prev-btn, .next-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
     padding: 10px 15px;
     cursor: pointer;
     z-index: 10;
+    border-radius: 50%;
     font-size: 1.5em;
-    line-height: 1;
+    transition: background-color 0.3s;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .prev-btn {
     left: 10px;
-    border-radius: 0 5px 5px 0;
 }
 
 .next-btn {
     right: 10px;
-    border-radius: 5px 0 0 5px;
 }
 
 

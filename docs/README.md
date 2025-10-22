@@ -1,11 +1,14 @@
 Personal website
 
-What's included
+Includes below
 
 - index.html — static html single-page site with sections: Home, About, Education, Activities, Experience, Projects, Hobbies, Awards
 - styles.css — warm color palette, responsive layout, light/dark theme variables
 - script.js — theme toggle (persists in localStorage) and scroll-based nav highlighting
-- TODO - add a way to download resume
+- assets/files - folder with resume in pdf format
+- assets/images - images used in the static website
+- assets/videos - short video clips for hobbies section
+- TODO - add piano and guitar videos
 
 How to run locally
 

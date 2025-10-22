@@ -492,7 +492,6 @@ body.dark-theme .skills-card li {
 
 .slide img {
     max-width: 90%;
-    height: 85%;
     border-radius: 8px;
     box-shadow: var(--shadow);
     margin-bottom: 15px;

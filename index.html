@@ -439,21 +439,22 @@
         <section id="hobbies">
             <h2>Hobbies</h2>
             <div class="hobbies-grid">
-                <div class="hobby-card">Chess</div>
-                <div class="hobby-card">Reading</div>
+                <div class="hobby-card" id="piano-card">Piano <i class="fas fa-video video-icon"></i></div>
+                <div class="hobby-card" id="guitar-card">Guitar <i class="fas fa-video video-icon"></i></div>
                 <div class="hobby-card">Fitness</div>
                 <div class="hobby-card" id="wrestling-card">Wrestling <i class="fas fa-video video-icon"></i></div>
                 <div class="hobby-card">Soccer</div>
                 <div class="hobby-card">Volleyball</div>
-                <div class="hobby-card">Music (Piano & Guitar)</div>
+                <div class="hobby-card">Chess</div>
+                <div class="hobby-card">Reading</div>
             </div>
             
             <div class="video-container" id="video-player-container">
-                <video id="wrestling-video" controls loop preload="auto"> 
+                <video id="hobby-video-player" controls loop preload="auto"> 
                     <source src="assets/videos/miaaWrestlingMeet.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <p style="margin-top: 15px; color: var(--text-secondary); font-style: italic;">
+                <p id="video-caption" style="margin-top: 15px; color: var(--text-secondary); font-style: italic;">
                     At one of inter-school wrestling meets 🤼‍♂️
                 </p>
             </div>

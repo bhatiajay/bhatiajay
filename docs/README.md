@@ -8,7 +8,6 @@ Includes below
 - assets/files - folder with resume in pdf format
 - assets/images - images used in the static website
 - assets/videos - short video clips for hobbies section
-- TODO - add piano and guitar videos
 
 How to run locally
 

@@ -101,36 +101,72 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', updateSlider);
     }
     
-    // Video toggle logic
-    const wrestlingCard = document.getElementById('wrestling-card');
+    // Hobby Video toggle logic
+    // Data for all video-linked hobby cards
+    const videoCards = [
+        { id: 'wrestling-card', src: 'assets/videos/miaaWrestlingMeet.mp4', caption: 'At one of inter-school wrestling meets 🤼‍♂️' },
+        { id: 'piano-card', src: 'assets/videos/playingPiano.mp4', caption: 'Playing Rondo Alla Turca (Turkish March) and the Merry Go Round of Life (Howl\'s Moving Castle) 🎹' },
+        { id: 'guitar-card', src: 'assets/videos/playingGuitar.mp4', caption: 'Playing Malagueña (Ernesto Lecuona) on the acoustic guitar 🎸' }
+    ];
+
     const videoContainer = document.getElementById('video-player-container');
-    const videoElement = document.getElementById('wrestling-video');
+    const videoElement = document.getElementById('hobby-video-player');
+    const videoCaption = document.getElementById('video-caption');
 
-    if (wrestlingCard && videoContainer && videoElement) {
-        wrestlingCard.addEventListener('click', (e) => {
-            e.preventDefault(); 
+    // Variable to track the currently loaded video source
+    let currentVideoSrc = '';
+
+    /**
+     * Handles the click event for all video-linked hobby cards.
+     * Toggles visibility, updates source, and controls playback.
+     */
+    function handleVideoCardClick(e, cardData) {
+        e.preventDefault(); 
+        
+        // Check if the same video is currently active
+        const isCurrentlyActive = videoContainer.classList.contains('active') && currentVideoSrc === cardData.src;
+
+        // Reset and hide the current video if it's visible, or if a different one is loaded
+        if (videoContainer.classList.contains('active')) {
+             videoElement.pause();
+             videoElement.currentTime = 0;
+             videoContainer.classList.remove('active');
+
+             // If the same video was clicked, we are done (it's now hidden)
+             if (isCurrentlyActive) {
+                currentVideoSrc = ''; // Clear source state
+                return; 
+             }
+        }
+        
+        // If we reach here, a new video needs to be loaded and shown.
+        // 1. Update source and caption
+        // We update the src attribute of the source element *inside* the video tag
+        videoElement.querySelector('source').src = cardData.src;
+        videoElement.load();
+        videoCaption.textContent = cardData.caption;
+        currentVideoSrc = cardData.src; // Set new source state
+
+        // 2. Show the container and play
+        // use a small delay to ensure the element is visible before trying to play.
+        setTimeout(() => {
+            videoContainer.classList.add('active');
             
-            // 1. Toggle visibility of the video container
-            const isActive = videoContainer.classList.toggle('active');
-
-            // 2. Control video playback and scrolling
-            if (isActive) {
-                // Video is visible:
-                // We use setTimeout to ensure the element is visible before trying to play.
-                setTimeout(() => {
-                    // Start playback (if user interaction policy allows)
-                    videoElement.play().catch(error => {
-                        console.log("Video playback interrupted (likely user interaction required):", error);
-                    });
-                }, 500); // 500ms matches the CSS transition time
-
-                // Scroll to the video container
-                videoContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            } else {
-                // Video is hidden: pause and reset it
-                videoElement.pause();
-                videoElement.currentTime = 0;
-            }
-        });
+            videoElement.play().catch(error => {
+                // This usually happens if the browser blocks autoplay without user interaction
+                console.log("Video playback interrupted (likely user interaction required):", error);
+            });
+            
+            // Scroll to the video container
+            videoContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 50); // Small delay to allow class change to apply
     }
+
+    // Attach the event listeners to all video cards
+    videoCards.forEach(cardData => {
+        const cardElement = document.getElementById(cardData.id);
+        if (cardElement) {
+            cardElement.addEventListener('click', (e) => handleVideoCardClick(e, cardData));
+        }
+    });
 });

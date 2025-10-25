@@ -592,7 +592,7 @@ body.dark-theme .hobby-card {
 }
 
 /* Ensure the video element itself takes full width of its container */
-#wrestling-video {
+#hobby-video-player { 
     width: 100%;
     max-width: 100%;
     border-radius: 8px;
